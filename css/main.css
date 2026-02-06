@@ -58,7 +58,7 @@ body {
   color: aliceblue;
 }
 .container-wide {
-  width: 1790px;
+  max-width: 1790px;
   padding: 0 15px;
 }
 .row {
@@ -73,7 +73,50 @@ body {
 .align-center {
   align-items: center;
 }
+.nav-button {
+  position: relative;
+  width: 42px; /* Ширина всей кнопки */
+  height: 25px; /* Высота всей кнопки (кликабельной области) */
+  border: none;
+  background-color: transparent; /* Прозрачный фон кнопки */
+  cursor: pointer;
+}
 
+/* Верхняя палочка */
+.nav-button::before {
+  position: absolute;
+  left: 0;
+  top: 0; /* В самом верху кнопки */
+  width: 42px; /* Ширина палочки = ширина кнопки */
+  height: 2px; /* Высота палочки */
+  content: "";
+  display: block;
+  background-color: #ffffff;
+}
+
+/* Средняя палочка - добавляем span в HTML */
+.nav-button span {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 2px;
+  background-color: #ffffff;
+  display: block;
+}
+
+/* Нижняя палочка */
+.nav-button::after {
+  position: absolute;
+  left: 0;
+  bottom: 0; /* В самом низу кнопки */
+  width: 42px;
+  height: 2px;
+  content: "";
+  display: block;
+  background-color: #ffffff;
+}
 /* HERO */
 
 .hero {
