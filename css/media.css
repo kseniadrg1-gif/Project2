@@ -1,11 +1,7 @@
 /* Планшеты и меньше (до 1024px) */
 @media (max-width: 1024px) {
   .header {
-    margin-bottom: 400px;
-  }
-
-  .hero {
-    padding-top: 100px;
+    margin-bottom: 100px;
   }
 
   .hero-title {
@@ -46,10 +42,61 @@
   }
 }
 
+/* Переходный размер (до 992px) */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+  .hero p {
+    font-size: 24px;
+  }
+}
+
 /* Планшеты в портретной ориентации (до 768px) */
 @media (max-width: 768px) {
   .nav {
-    display: none;
+    display: block;
+  }
+  .hero {
+    padding-top: 80px;
+  }
+
+  .nav ul {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100%;
+    background: #0b1d26;
+    flex-direction: column;
+    padding: 100px 40px;
+    display: flex;
+    z-index: 999;
+    transition: left 0.3s ease-in-out;
+    margin: 0;
+  }
+
+  .nav ul.active {
+    left: 0;
+  }
+
+  .nav a {
+    font-size: 24px;
+    padding: 15px 0;
+    display: block;
+  }
+
+  .nav ul::after {
+    content: "Account";
+    display: block;
+    color: #fbd784;
+    font-size: 20px;
+    margin-top: 50px;
+    border: 2px solid #fbd784;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
   }
 
   .account {
@@ -62,6 +109,16 @@
 
   .hero-title {
     font-size: 48px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+  .hero p {
+    font-size: 20px;
+  }
+  .scroll-down {
+    font-size: 16px;
   }
 
   .article-title {
@@ -137,6 +194,17 @@
     line-height: 1.2;
   }
 
+  .hero h1 {
+    font-size: 28px;
+  }
+  .hero p {
+    font-size: 18px;
+  }
+  .scroll-down {
+    font-size: 14px;
+    flex-direction: column;
+  }
+
   .hero-category {
     padding-left: 60px;
     font-size: 14px;
@@ -209,48 +277,10 @@
 }
 
 /* Высокие экраны (минимальная высота) */
-@media (min-height: 800px) {
-  .hero {
-    padding-top: 250px;
-  }
-}
 
 /* Бургер скрыт на больших экранах */
 @media (min-width: 769px) {
   .nav-button {
     display: none;
-  }
-}
-@media (max-width: 992px) {
-  .hero h1 {
-    font-size: 48px;
-  }
-  .hero p {
-    font-size: 24px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 36px;
-  }
-  .hero p {
-    font-size: 20px;
-  }
-  .scroll-down {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 28px;
-  }
-  .hero p {
-    font-size: 18px;
-  }
-  .scroll-down {
-    font-size: 14px;
-    flex-direction: column;
   }
 }

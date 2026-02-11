@@ -67,34 +67,36 @@ body {
 .space-between {
   justify-content: space-between;
 }
-.nav wrapper {
-  margin-bottom: 198px;
+.nav-wrapper {
 }
 .align-center {
   align-items: center;
 }
 .nav-button {
   position: relative;
-  width: 42px; /* Ширина всей кнопки */
-  height: 25px; /* Высота всей кнопки (кликабельной области) */
+  z-index: 1000;
+  width: 42px;
+  height: 25px;
   border: none;
-  background-color: transparent; /* Прозрачный фон кнопки */
+  background-color: transparent;
   cursor: pointer;
+  display: none;
 }
 
 /* Верхняя палочка */
 .nav-button::before {
   position: absolute;
   left: 0;
-  top: 0; /* В самом верху кнопки */
-  width: 42px; /* Ширина палочки = ширина кнопки */
-  height: 2px; /* Высота палочки */
+  top: 0;
+  width: 42px;
+  height: 2px;
   content: "";
   display: block;
   background-color: #ffffff;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Средняя палочка - добавляем span в HTML */
+/* Средняя палочка */
 .nav-button span {
   position: absolute;
   left: 0;
@@ -104,19 +106,38 @@ body {
   height: 2px;
   background-color: #ffffff;
   display: block;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Нижняя палочка */
 .nav-button::after {
   position: absolute;
   left: 0;
-  bottom: 0; /* В самом низу кнопки */
+  bottom: 0;
   width: 42px;
   height: 2px;
   content: "";
   display: block;
   background-color: #ffffff;
+  transition: all 0.3s ease-in-out;
 }
+
+/* Анимация бургера в крестик */
+.nav-button.active::before {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.nav-button.active span {
+  opacity: 0;
+  transform: translateY(-50%) scale(0);
+}
+
+.nav-button.active::after {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
 /* HERO */
 
 .hero {
@@ -312,11 +333,11 @@ body {
 }
 
 .footer__container {
-  max-width: 1492px; /* такой же как у .container */
+  max-width: 1492px;
   margin: 0 auto;
-  padding: 0 15px; /* ← как у .container */
-  padding-left: 20px; /* ← 150px + 15px */
-  padding-right: 15px; /* ← как у .container */
+  padding: 0 15px;
+  padding-left: 20px;
+  padding-right: 15px;
   width: 100%;
   display: flex;
   justify-content: space-between;
